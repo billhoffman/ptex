@@ -111,7 +111,7 @@ namespace {
 	// use process id and counter to make unique filename
 	std::stringstream s;
 	static int count = 0;
-	s << tmpdir << "/" << "PtexTmp" << getpid() << "_" << ++count;
+	s << tmpdir << "/" << "PtexTmp" << _getpid() << "_" << ++count;
 	tmppath = s.str();
 	return fopen((char*) tmppath.c_str(), "w+");
 #else
@@ -223,7 +223,7 @@ PtexWriter* PtexWriter::edit(const char* path, bool incremental,
 		std::stringstream str;
 		str << "PtexWriter::edit error: header doesn't match existing file, "
 		    << "conversions not currently supported";
-		error = str.str();
+		error = str.str().c_str();
 		return 0;
 	    }
 	}

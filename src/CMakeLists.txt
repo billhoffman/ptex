@@ -7,6 +7,11 @@ enable_testing()
 
 # add global include directory
 include_directories(${ptex_SOURCE_DIR}/ptex)
+if(MSVC)
+  add_definitions(-DPTEX_STATIC)
+endif()
+find_package(ZLIB REQUIRED)
+include_directories(${ZLIB_INCLUDE_DIR})
 
 # add sub directories
 add_subdirectory(ptex)

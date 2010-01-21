@@ -1,7 +1,7 @@
-add_definitions(-DPATH_MAX=256)
+if(NOT MSVC)
+  add_definitions(-DPATH_MAX=256)
+endif()
 include(FindThreads)
-find_package(ZLIB REQUIRED)
-include_directories(${ZLIB_INCLUDE_DIR})
 
 set(SRCS 
 	PtexCache.cpp 

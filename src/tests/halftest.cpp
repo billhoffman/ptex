@@ -40,7 +40,9 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
 #include <math.h>
 #include <stdio.h>
+#ifndef _MSC_VER
 #include <stdint.h>
+#endif
 #include <iostream>
 #include <string.h>
 
